@@ -133,6 +133,10 @@ int getResizeMargin(HWND window)
     UINT currentDpi = GetDpiForWindow(window);
     int resizeBorder = GetSystemMetricsForDpi(SM_CXSIZEFRAME, currentDpi);
     int borderPadding = GetSystemMetricsForDpi(SM_CXPADDEDBORDER, currentDpi);
+    bool isMaximized = IsZoomed(window);
+    if (isMaximized) {
+        return borderPadding;
+    }
     return resizeBorder + borderPadding;
 }
 
