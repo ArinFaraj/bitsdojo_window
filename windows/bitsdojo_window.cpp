@@ -206,7 +206,7 @@ LRESULT handle_nccalcsize(HWND window, WPARAM wparam, LPARAM lparam)
     bool isMaximized = IsZoomed(window);
     if (isMaximized)
     {
-        int resizeMargin = getResizeMargin(window)-1;
+        int resizeMargin = getResizeMargin(window);
         params->rgrc[0].left += resizeMargin;
         params->rgrc[0].top += resizeMargin;
         params->rgrc[0].right -= resizeMargin;
